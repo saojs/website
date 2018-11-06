@@ -1,6 +1,6 @@
 # Creating Your First Generator
 
-A generator is essentially a directory which includes a `saofile.js`, let's make one now:
+A generator instance is created from a `saofile.js`, let's make one now:
 
 ```bash
 mkdir sample-generator
@@ -17,7 +17,7 @@ You can use `saofile.js` to ask user questions in order to generate / move / mod
 module.exports = {
   prompts: [
     {
-      name: 'username',
+      name: 'author',
       message: 'What is your name'
     }
   ],
@@ -38,6 +38,28 @@ You can now run this local generator to create a new project:
 sao ./sample-generator new-project
 ```
 
-<TerminalDemo url="https://cdn.rawgit.com/egoist/3464acbc4202569a837fac650ec495ba/raw/daaf3bded1c57c72f7052d2703579e5aed3f9344/sao-preview.svg" />
+## Access Generator Instance
+
+A [generator instance](../generator-instance.md) will be created from exported object, if you want to access the instance you can use `actions` `prompts` as `function`:
+
+```js
+const pokemon = require('pokemon')
+
+module.exports = {
+  prompts() {
+    return [
+      {
+        name: 'author',
+        message: 'What is your name',
+        // Use the value of `git config --global user.name` as the default value
+        default: this.gitUser.name
+      }
+    ]
+  },
+  // ...
+}
+```
+
+---
 
 For a complete list of options in `saofile.js`, please check out [the config references](./saofile.md).
