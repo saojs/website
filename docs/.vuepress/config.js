@@ -2,8 +2,9 @@ module.exports = {
   title: 'SAO',
   description: 'Project scaffolding for humans.',
   themeConfig: {
-    repo: 'saojs/sao',
-    docsDir: 'docs',
+    repo: 'saojs/sao',
+    docsRepo: 'saojs/website',
+    docsDir: 'docs',
     editLinks: true,
     nav: [
       {
