@@ -4,13 +4,9 @@
 Make sure you have read the guide for [creating a generator](./creating-a-generator.md) first!
 :::
 
-::: tip NOTE
-Each root property in the `saofile.js` can also be a function which can access [SAO instance](./the-sao-instance.md) via `this`.
-:::
-
 ## Prompts
 
-__Type__: `Prompt[]` | `(context: SAO) => Prompt[]`
+__Type__: `Prompt[]` | `(context: Context) => Prompt[] | Promise<Prompt[]>`
 
 `prompts` is a list of questions you want the user to answer.
 
@@ -77,9 +73,6 @@ actions: [
 - __files__: One or more glob patterns.
 - __transform__: Enable/Disable transformer.
   - __Default__: `true`
-- __transformer__:
-  - __Default__: `ejs` (jstransformer-ejs)
-- __transformerOptions__: Options for the transformer.
 - __transformInclude__: One or more glob patterns, transform specific files with the transformer.
 - __transformExclude__: One or more glob patterns, __DON'T__ transform specific files with the transformer.
 
@@ -149,7 +142,7 @@ Executed when all actions are completed.
 ```js
 module.exports = {
   async completed() {
-    await this.gitInit()
+    this.gitInit()
     await this.npmInstall()
     this.showCompleteTips()
   }

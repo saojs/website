@@ -20,7 +20,7 @@ module.exports = {
           '/guide/creating-your-first-generator',
           '/guide/sharing-your-generator',
           '/guide/saofile',
-          '/guide/the-sao-instance',
+          '/guide/generator-context',
           '/guide/migrate-from-v0'
         ]
       }

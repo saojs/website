@@ -5,18 +5,16 @@
 SAO is a CLI library written in JavaScript, so you can install it from npm:
 
 ```bash
-npm i -g sao@next
+npm i -g sao
 ```
 
 Alternatively, a lot of you may use Yarn instead:
 
 ```bash
-yarn global add sao@next
+yarn global add sao
 ```
 
-Note that SAO 1.0 is currently in beta, it is published at `next` channel on npm registry.
-
-Then try the command `sao -v` in your terminal, if everything works fine you'd see a version number.
+Then try the command `sao` in your terminal, if everything works fine you'd see the CLI usages.
 
 ## Using Generator
 
@@ -42,7 +40,7 @@ A generator could be one of:
 A generator might have sub generators, you can run them like this:
 
 ```bash
-sao nm:circleci
+sao nm:donate
 ```
 
-The part after `:` is a sub generator called `circleci`, by running this command SAO will run the sub generator which will generate a `circle.yml` in current directory.
+The part after `:` is a sub generator called `donate`, by running this command SAO will run the sub generator which will add a `postinstall` script to show donation URL in your `package.json`.
