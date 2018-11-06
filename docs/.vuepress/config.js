@@ -9,6 +9,10 @@ module.exports = {
       {
         text: 'Guide',
         link: '/guide/introduction'
+      },
+      {
+        text: 'API',
+        link: '/api'
       }
     ],
     sidebar: [
@@ -20,7 +24,6 @@ module.exports = {
           '/guide/creating-your-first-generator',
           '/guide/sharing-your-generator',
           '/guide/saofile',
-          '/guide/generator-context',
           '/guide/migrate-from-v0'
         ]
       }

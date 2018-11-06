@@ -1,7 +1,7 @@
 # SAO Config File
 
 ::: tip
-Make sure you have read the guide for [creating a generator](./creating-a-generator.md) first!
+Make sure you have read the guide for [creating generators](./creating-your-first-generator.md) first!
 :::
 
 ## Prompts
