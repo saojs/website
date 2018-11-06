@@ -18,6 +18,7 @@ module.exports = {
     sidebar: [
       {
         title: 'Guide',
+        collapsable: false,
         children: [
           '/guide/introduction',
           '/guide/getting-started',
@@ -25,6 +26,13 @@ module.exports = {
           '/guide/sharing-your-generator',
           '/guide/saofile',
           '/guide/migrate-from-v0'
+        ]
+      },
+      {
+        title: 'Advanced',
+        collapsable: false,
+        children: [
+          '/guide/testing-generators'
         ]
       }
     ]
