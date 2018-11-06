@@ -23,7 +23,7 @@ test('defaults', async t => {
 	const mockPromptAnswers = { useRouter: true }
 	const stream = await sao.mock({ generator }, mockPromptAnswers)
 	// Check if `router.js` is in the generated files
-	t.true(stream.fileList.has('router.js'))
+	t.true(stream.fileList.includes('router.js'))
 })
 ```
 
