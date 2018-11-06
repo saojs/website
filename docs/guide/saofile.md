@@ -44,11 +44,7 @@ This is a property only for SAO, it is used to store user inputs so that SAO can
 
 ### `default`
 
-There're some placeholder keywords for setting default value:
-
-- `[folderName]`: the name of target folder
-- `[gitUser]`: the username of current git user
-- `[gitEmail]`: the email of current git user
+When `default` is a string, you can use `{name}` to access properties in [GeneratorContext](/generator-context.md). e.g. Use `default: '{gitUser.name}'` to set the default value to the name of the git user.
 
 ## Actions
 
