@@ -1,41 +1,101 @@
 # Creating Your First Generator
 
-A generator instance is created from a `saofile.js`, let's make one now:
+SAO provides a generator for creating a new generator:
 
 ```bash
-mkdir sample-generator
-cd sample-generator
-vim saofile.js
-# or edit it with your editor of choice
+sao generator sao-sample
+# Make sure to replace `sao-sample` with your desired generator name
 ```
 
-You can use `saofile.js` to ask user questions in order to generate / move / modify files.
+![preview](/images/sao-generator-sao-sample.png)
+
+## Folder Structure
+
+The basic folder structure is as follows:
+
+```bash
+.
+├── LICENSE
+├── README.md
+├── circle.yml
+├── package.json
+├── saofile.js
+├── template
+│   ├── LICENSE
+│   ├── README.md
+│   └── gitignore
+├── test
+│   └── test.js
+└── yarn.lock # Or package-lock.json if you don't have Yarn on your machine
+```
 
 📝 __saofile.js__:
 
 ```js{8-13}
+const superb = require('superb')
+
 module.exports = {
-  prompts: [
-    {
-      name: 'author',
-      message: 'What is your name'
-    }
-  ],
+  prompts() {
+    return [
+      {
+        name: 'name',
+        message: 'What is the name of the new project',
+        default: this.outFolder,
+        filter: val => val.toLowerCase()
+      },
+      {
+        name: 'description',
+        message: 'How would you descripe the new project',
+        default: `my ${superb()} project`
+      },
+      {
+        name: 'username',
+        message: 'What is your GitHub username',
+        default: this.gitUser.username || this.gitUser.name,
+        filter: val => val.toLowerCase(),
+        store: true
+      },
+      {
+        name: 'email',
+        message: 'What is your email?',
+        default: this.gitUser.email,
+        store: true
+      },
+      {
+        message: 'The URL of your website',
+        default({ username }) {
+          return `github.com/${username}`
+        },
+        store: true
+      }
+    ]
+  },
   actions: [
     {
       type: 'add',
       files: '**'
+    },
+    {
+      type: 'move',
+      patterns: {
+        gitignore: '.gitignore'
+      }
     }
-  ]
+  ],
+  async completed() {
+    this.gitInit()
+    await this.npmInstall()
+    this.showProjectTips()
+  }
 }
 ```
 
-Note the highlighted lines, they will make SAO generate files from `./sample-generator/template/**` to the target directory. These files will also be rendered by [`ejs`](http://ejs.co/) using the answers of `prompts`.
-
-You can now run this local generator to create a new project:
+- `prompts`: CLI prompts to retrive answers from current user.
+- `actions`: A series of actions to manipulate files.
+- `completed`: A function that will be invoked when the whole process is finished.
 
 ```bash
-sao ./sample-generator new-project
+sao ../sao-sample new-project
 ```
 
 ## Access Generator Instance

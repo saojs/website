@@ -62,3 +62,11 @@ sao nm:donate
 ```
 
 The part after `:` is a sub-generator called `donate`, by running this command SAO will run the sub-generator which will add a `postinstall` script in `package.json` to show donation URL.
+
+::: warning
+Sub-generators are supposed to be running in an existing project, which means the output directory is always current working directory.
+:::
+
+### Update Cached Generator
+
+Once you've run a generator, it will be cached locally in `~/.sao` directory. To run the same generator with an up-to-date version, you can add the `--update` or `-u` flag.
