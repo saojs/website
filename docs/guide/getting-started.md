@@ -16,7 +16,7 @@ yarn global add sao
 
 Then try the command `sao` in your terminal, if everything works fine you'd see the CLI usages.
 
-## Using Generator
+## Using Generators
 
 ```bash
 sao nm my-project
@@ -35,12 +35,30 @@ A generator could be one of:
   - `gitlab:` For GitLab.
   - `bitbucket:` For BitBucket.
 
-## Sub generators
+### Versioning
 
-A generator might have sub generators, you can run them like this:
+For npm package, you can use a specific verison of the generator:
+
+```bash
+sao nm@1
+sao nm@0.2
+```
+
+The syntax here is the same as `npm install`.
+
+For git repository, you can use a specific tag, commit or branch of the generator:
+
+```bash
+sao nm#dev
+sao nm#v1.0.0
+```
+
+### Sub-generators
+
+A generator might have sub-generators, you can run them like this:
 
 ```bash
 sao nm:donate
 ```
 
-The part after `:` is a sub generator called `donate`, by running this command SAO will run the sub generator which will add a `postinstall` script to show donation URL in your `package.json`.
+The part after `:` is a sub-generator called `donate`, by running this command SAO will run the sub-generator which will add a `postinstall` script in `package.json` to show donation URL.

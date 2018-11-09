@@ -1,6 +1,6 @@
 module.exports = {
   title: 'SAO',
-  description: 'Project scaffolding for humans.',
+  description: 'A scaffolding tool for humans',
   themeConfig: {
     repo: 'saojs/sao',
     docsRepo: 'saojs/website',
@@ -9,7 +9,7 @@ module.exports = {
     nav: [
       {
         text: 'Guide',
-        link: '/guide/introduction'
+        link: '/guide/getting-started'
       },
       {
         text: 'API',
@@ -21,7 +21,7 @@ module.exports = {
         title: 'Guide',
         collapsable: false,
         children: [
-          '/guide/introduction',
+          '/',
           '/guide/getting-started',
           '/guide/creating-your-first-generator',
           '/guide/sharing-your-generator',
