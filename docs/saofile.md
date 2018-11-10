@@ -119,7 +119,7 @@ actions: [
 
 Remove files in target directory.
 
-```js{3-4}
+```js
 actions: [
   {
     type: 'remove',
