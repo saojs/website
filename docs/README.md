@@ -10,7 +10,7 @@ SAO helps you kick start a new project either by using existing "[generators](ht
 
 ## A Quick Look
 
-Here we have a SAO generator which is used to create a new node modules, it's published on npm as [sao-nm](https://npm.im/sao-nm) and also available on GitHub at [http://github.com/saojs/sao-nm](http://github.com/saojs/sao-nm):
+Here we have a SAO generator which is used to create a new node module, it's published on npm as [sao-nm](https://npm.im/sao-nm) and also available on GitHub at [http://github.com/saojs/sao-nm](http://github.com/saojs/sao-nm):
 
 ```bash
 sao nm my-node-module
