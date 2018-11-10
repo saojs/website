@@ -1,4 +1,4 @@
-# Tesing Generators
+# Testing Generators
 
 You can test your generators with your testing framework of choice, like [AVA](https://ava.li) we are going to use here.
 
