@@ -12,7 +12,7 @@ SAO file, i.e. `saofile.js` lies in the root directory of a generator, it's used
 
 ## Prompts
 
-__Type__: `Prompt[]` | `(generator: Generator) => Prompt[] | Promise<Prompt[]>`
+__Type__: `Prompt[]` | `(this: Generator) => Prompt[] | Promise<Prompt[]>`
 
 `prompts` is a list of questions you want the user to answer.
 
@@ -53,6 +53,8 @@ This is a property only for SAO, it is used to store user inputs so that SAO can
 When `default` is a string, you can use `{propName}` to access properties on [Generator Instance](./generator-instance.md). e.g. Use `default: '{gitUser.name}'` to set the default value to the name of the git user. If you want to disable interpolations here, use double back-slash: `\\{gitUser.name}`.
 
 ## Actions
+
+__Type__: `Action[]` | `(this: Generator) => Action[] | Promise<Action[]>`
 
 `actions` is used to manipulate files. There're 4 kinds of actions which share following options:
 
@@ -142,6 +144,8 @@ The working directory for file action: `add`.
 
 ### `prepare`
 
+__Type__: (this: Generator) => Prompt<void> | void`
+
 Executed before prompts and actions, you can throw an error here to exit the process:
 
 ```js
@@ -159,6 +163,8 @@ module.exports = {
 ```
 
 ### `completed`
+
+__Type__: (this: Generator) => Prompt<void> | void`
 
 Executed when all actions are completed.
 
