@@ -2,7 +2,7 @@
 
 ## What's SAO?
 
-SAO helps you kick start a new project either by using existing "generators" or the ones you made on your own.
+SAO helps you kick start a new project either by using existing "[generators](https://github.com/saojs/awesome-sao)" or the ones you made on your own.
 
 ## Why not use Yeoman?
 
