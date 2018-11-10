@@ -1,16 +1,22 @@
-# SAO Config File
+---
+sidebar: auto
+---
+
+# SAO File
 
 ::: tip
-Make sure you have read the guide for [creating generators](./creating-your-first-generator.md) first!
+Make sure you have read the guide for [creating generators](./guide/creating-your-first-generator.md) first!
 :::
+
+SAO file, i.e. `saofile.js` lies in the root directory of a generator, it's used to create a generator instance which defines how to generate a new project.
 
 ## Prompts
 
-__Type__: `Prompt[]` | `(context: Context) => Prompt[] | Promise<Prompt[]>`
+__Type__: `Prompt[]` | `(generator: Generator) => Prompt[] | Promise<Prompt[]>`
 
 `prompts` is a list of questions you want the user to answer.
 
-All question types in [Inquirer.js](https://github.com/SBoudrias/Inquirer.js#question) are supported. There are some differences though:
+All prompt types in [Inquirer.js](https://github.com/SBoudrias/Inquirer.js#question) are supported here. There are a few differences in the prompt options though:
 
 ### `when`
 
@@ -40,11 +46,11 @@ Basically it's equivalent to `when: answers => answers.useBundler`.
 - __Type__: `boolean`
 - __Default__: `false`
 
-This is a property only for SAO, it is used to store user inputs so that SAO can use stored value as default value the next time.
+This is a property only for SAO, it is used to store user inputs so that SAO can use stored value as default value the next time. Note that different version of a generator stores the inputs in different places.
 
 ### `default`
 
-When `default` is a string, you can use `{name}` to access properties in [GeneratorContext](../generator-instance.md). e.g. Use `default: '{gitUser.name}'` to set the default value to the name of the git user.
+When `default` is a string, you can use `{propName}` to access properties on [Generator Instance](./generator-instance.md). e.g. Use `default: '{gitUser.name}'` to set the default value to the name of the git user. If you want to disable interpolations here, use double back-slash: `\\{gitUser.name}`.
 
 ## Actions
 
@@ -90,7 +96,7 @@ actions: [
 ```
 
 - __files__: One or more glob patterns.
-- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will receieve raw string.
+- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will recieve raw string.
 
 ### `type: 'move'`
 
@@ -123,13 +129,27 @@ actions: [
 ]
 ```
 
-- __files__: The files to remove.
-  - `string`: A glob pattern.
-  - `string[]`: An array of glob patterns.
-  - `object`: Each entry is a glob pattern, if the value is a string, then it will be evaluated in the context of `answers`.
-  - `function`: Accepts `answers` as the only argument, and returns either of above types.
+- __files__: One or more glob patterns to match the files that should be removed.
 
 ## Hooks
+
+### `prepare`
+
+Executed before prompts and actions, you can throw an error here to exit the process:
+
+```js
+module.exports = {
+  // A generator that requires package.json in output directory
+  async prepare() {
+    const hasPkg = await this.fs.pathExists(this.resolve('package.json'))
+    if (!hasPkg) {
+      throw this.createError('Missing package.json')
+      // You can also throw new Error('...') directly
+      // While `this.createError` will only display error message without stack trace.
+    }
+  }
+}
+```
 
 ### `completed`
 

@@ -1,4 +1,4 @@
-# Creating Your First Generator
+# Creating Generators
 
 SAO provides a generator for creating a new generator:
 
@@ -6,8 +6,6 @@ SAO provides a generator for creating a new generator:
 sao generator sao-sample
 # Make sure to replace `sao-sample` with your desired generator name
 ```
-
-![preview](/images/sao-generator-sao-sample.png)
 
 ## Folder Structure
 
@@ -31,7 +29,7 @@ The basic folder structure is as follows:
 
 📝 __saofile.js__:
 
-```js{8-13}
+```js
 const superb = require('superb')
 
 module.exports = {
@@ -94,17 +92,17 @@ module.exports = {
 - `actions`: A series of actions to manipulate files.
 - `completed`: A function that will be invoked when the whole process is finished.
 
+Now you can run the generator to generate a new project:
+
 ```bash
 sao ../sao-sample new-project
 ```
 
 ## Access Generator Instance
 
-A [generator instance](../generator-instance.md) will be created from exported object, if you want to access the instance you can use `actions` `prompts` as `function`:
+A [generator instance](../generator-instance.md) will be created from exported object, if you want to access the instance you can use `actions` `prompts` as `function`, the generator instance will be available as `this` in the function:
 
 ```js
-const pokemon = require('pokemon')
-
 module.exports = {
   prompts() {
     return [
@@ -120,6 +118,4 @@ module.exports = {
 }
 ```
 
----
-
-For a complete list of options in `saofile.js`, please check out [the config references](./saofile.md).
+For a complete list of options in `saofile.js`, please check out [SAO File References](../saofile.md).

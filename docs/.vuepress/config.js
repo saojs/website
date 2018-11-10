@@ -12,8 +12,21 @@ module.exports = {
         link: '/guide/getting-started'
       },
       {
-        text: 'API',
-        link: '/api'
+        text: 'References',
+        items: [
+          {
+            text: 'API',
+            link: '/api'
+          },
+          {
+            text: 'SAO File',
+            link: '/saofile'
+          },
+          {
+            text: 'Generator Instance',
+            link: '/generator-instance'
+          }
+        ]
       }
     ],
     sidebar: [
@@ -23,17 +36,10 @@ module.exports = {
         children: [
           '/',
           '/guide/getting-started',
-          '/guide/creating-your-first-generator',
-          '/guide/sharing-your-generator',
-          '/guide/saofile',
+          '/guide/creating-generators',
+          '/guide/testing-generators',
+          '/guide/sharing-generators',
           '/guide/migrate-from-v0'
-        ]
-      },
-      {
-        title: 'Advanced',
-        collapsable: false,
-        children: [
-          '/guide/testing-generators'
         ]
       }
     ]
