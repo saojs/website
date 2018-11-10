@@ -98,6 +98,8 @@ Now you can run the generator to generate a new project:
 sao ../sao-sample new-project
 ```
 
+Note that if no `saofile.js` was found in the generator, SAO will use a [default one](https://github.com/saojs/sao/blob/master/lib/saofile.fallback.js) which would simply copy all files into output directory.
+
 ## Access Generator Instance
 
 A [generator instance](../generator-instance.md) will be created from exported object, if you want to access the instance you can use `actions` `prompts` as `function`, the generator instance will be available as `this` in the function:
