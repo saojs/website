@@ -28,3 +28,4 @@ New complete list of root options:
 - actions
 - completed
 - generators
+- prepare
