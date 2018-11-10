@@ -72,7 +72,7 @@ actions: [
 ]
 ```
 
-- __files__: One or more glob patterns.
+- __files__: One or more glob patterns, files are resolved relative to [`templateDir`](#templatedir).
 - __transform__: Enable/Disable transformer.
   - __Default__: `true`
 - __transformInclude__: One or more glob patterns, transform specific files with the transformer.
@@ -130,6 +130,13 @@ actions: [
 ```
 
 - __files__: One or more glob patterns to match the files that should be removed.
+
+## templateDir
+
+- __Type__: `string`
+- __Default__: `template`
+
+The working directory for file action: `add`.
 
 ## Hooks
 
