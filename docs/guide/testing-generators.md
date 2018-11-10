@@ -2,7 +2,7 @@
 
 You can test your generators with your testing framework of choice, like [AVA](https://ava.li) we are going to use here.
 
-Before writing actual tests, you need to install `sao` and your testing framework of choice in the generator as dev dependencies, here we are going to use [AVA](https://ava.li) for unit testing:
+Before writing actual tests, you need to install `sao` and your testing frameworkin the generator as dev dependencies:
 
 ```bash
 cd my-generator
