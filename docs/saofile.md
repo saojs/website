@@ -140,6 +140,35 @@ actions: [
 
 The working directory for file action: `add`.
 
+## Sub-Generators
+
+You can use the `subGenerators` option to register a list of sub generators:
+
+```js
+module.exports = {
+  subGenerators: [
+    {
+      name: 'foo',
+      // A path to the generator, relative to the saofile
+      generator: './generators/foo'
+    },
+    {
+      name: 'bar',
+      // Or use a package, like `sao-bar` here
+      // It's also resolved relative to the saofile
+      generator: 'sao-bar'
+    }
+  ]
+}
+```
+
+Then you can call these sub-generators like this:
+
+```bash
+sao sample:foo
+sao sample:bar
+```
+
 ## Hooks
 
 ### `prepare`
