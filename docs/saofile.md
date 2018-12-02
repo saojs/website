@@ -149,7 +149,7 @@ The working directory for file action: `add`.
 The files added via file action `add` will be interpolated using [EJS](https://ejs.co) syntax. By default the data you can access is:
 
 - `answers`: Directly access answers, e.g. `<%= description %>` to access the answer of project description.
-- `context`: The [generator instance](./generator-instance.md). e.g. `<%= context.npmClient>`
+- `context`: The [generator instance](./generator-instance.md). e.g. `<%= context.npmClient %>`
 
 You can provide more data with the `templateData` option:
 
