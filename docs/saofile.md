@@ -83,6 +83,8 @@ actions: [
 - __transformInclude__: One or more glob patterns, transform specific files with the transformer.
 - __transformExclude__: One or more glob patterns, __DON'T__ transform specific files with the transformer.
 - __filters__: Exclude some files from being added. It's an object whose key is a glob pattern and the value should be either a boolean or a string which will be evaluated in the context of `answers`. 
+- __templateData__: See [templateData](#templatedata) but for this action only.
+- __templateDir__: See [templateDir](#templatedir) but for this action only.
 
 ### `type: 'modify'`
 
