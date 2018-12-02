@@ -144,6 +144,37 @@ actions: [
 
 The working directory for file action: `add`.
 
+## templateData
+
+The files added via file action `add` will be interpolated using [EJS](https://ejs.co) syntax. By default the data you can access is:
+
+- `answers`: Directly access answers, e.g. `<%= description %>` to access the answer of project description.
+- `context`: The [generator instance](./generator-instance.md). e.g. `<%= context.npmClient>`
+
+You can provide more data with the `templateData` option:
+
+```js
+module.exports = {
+  templateData: {
+    date: new Date()
+  }
+}
+```
+
+Then you can access it via `<%= date %>` in your files.
+
+`templateData` can also be a function which can access generator context via `this`:
+
+```js
+module.exports = {
+  templateData() {
+    return {
+      link: `https://github.com/${this.gitUser.name}`
+    }
+  }
+}
+```
+
 ## Sub-Generators
 
 You can use the `subGenerators` option to register a list of sub generators:
