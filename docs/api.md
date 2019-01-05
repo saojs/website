@@ -14,16 +14,16 @@ const app = sao(options)
 ## Options
 
 | Option key | Option Value | Description |
-| ---------- | ------------ |
-| generator | String: generator name | Example: full path to local directory with a `saofile.js`
-| outDir | String: full path to scaffold the project into |
+| ---------- | ------------ | ----------- |
+| generator | String: generator name | Example: full path to local directory with a `saofile.js`|
+| outDir | String: full path to scaffold the project into ||
 
 
 ## Instance Methods
 
 | Method name | Description |
 | ---------- | ------------ |
-| Promise: run() | Run the generator scaffold. Example: `sao(options).run()`
+| Promise: run() | Run the generator scaffold. Example: `sao(options).run()`|
 
 
 ## Instance Properties
@@ -37,6 +37,7 @@ const app = sao(options)
 Invoke Sao from a standalone CLI project:
 
 `./bin/cli.js`
+
 ```js
 #!/usr/bin/env node
 'use strict'
