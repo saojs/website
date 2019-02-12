@@ -15,7 +15,7 @@ const app = sao(options)
 
 | Option key | Option Value | Description |
 | ---------- | ------------ | ----------- |
-| generator | String: generator name | Example: full path to local directory with a `saofile.js`|
+| generator | String: generator name | Same as the [generator format for SAO CLI](https://saojs.org/guide/getting-started.html#using-generators). Examples: `npm:foo`, `egoist/sao-nm`, full path to local directory with a `saofile.js`|
 | outDir | String: full path to scaffold the project into ||
 
 
