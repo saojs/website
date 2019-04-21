@@ -2,41 +2,41 @@
 sidebar: auto
 ---
 
-# Generator Instance
+# 生成器实例
 
-You can access generator instance in SAO File via `this`.
+你可以通过 `this`访问生成器实例。
 
-## Properties
+## 属性
 
 ### answers
 
 - Type: `{[k:string]: any} | undefined`
 
-The answers of prompts. when you access it in `prompts`, it will be `undefined`.
+弹窗问询的结果。
 
 ### gitUser
 
 - Type: `{name?: string, username?: string, email?: string}`
 
-The global configuration of the git user.
+git用户信息。
 
 ### outDir
 
 - Type: `string`
 
-The absolute path to output directory.
+输出目录的绝对路径。
 
 ### outFolder
 
 - Type: `string`
 
-The folder name of output directory.
+输出目录的名称。
 
 ### npmClient
 
 - Type: `'npm' | 'yarn'`
 
-The npm client.
+管理工具是npm还是yarn。
 
 ### fs
 
@@ -54,27 +54,27 @@ The npm client.
 
 - Type: [Chalk](https://github.com/chalk/chalk)
 
-## Methods
+## 方法
 
 ### gitInit
 
 - Type: `() => void`
 
-Run `git init` synchonously in output directory.
+ 同步运行`git init` 命令。
 
 ### npmInstall
 
 - Type: `NpmInstall`
 
-Use `npm` or `yarn` to install packages in output directory.
+运用`npm` 或 `yarn` 来在输出目录下安装包依赖。
 
 ```ts
 function npmInstall(opts?: InstallOpts): Promise<void>
 
 interface InstallOpts {
-  /* The packages to install, if omited, it will install packages in `package.json` */
+  /* 安装的包名称，如果省略了，它将自动安装 `package.json`中的依赖。 */
   packages?: string[]
-  /* Install packages as devDependencies, false by default */
+  /* 安装包作为devDependencies，默认为false
   saveDev?: boolean
 }
 ```
@@ -83,4 +83,4 @@ interface InstallOpts {
 
 - Type: `() => void`
 
-Display a message for successful project creation.
+显示创建成功的信息。
