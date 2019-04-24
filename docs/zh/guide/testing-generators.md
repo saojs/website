@@ -1,6 +1,6 @@
 # 测试生成器
 
-您可以选择自己习惯的测试框架来测试骚.js生成器, 例如[AVA](https://ava.li)。
+您可以选择自己习惯的测试框架来测试SAO生成器, 例如[AVA](https://ava.li)。
 
 在测试之前，你需要确保已经将`sao`和你的测试框架`ava`安装到了devDependencies中。
 

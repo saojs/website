@@ -7,7 +7,7 @@ sidebar: auto
 ```js
 const sao = require('sao')
 
-// 创建骚.js实例
+// 创建SAO实例
 const app = sao(options)
 ```
 
@@ -32,9 +32,9 @@ const app = sao(options)
 
 ## 示例
 
-### 本地调用骚.js命令行
+### 本地调用SAO命令行
 
-你可以这样本地调用骚.js的命令行
+你可以这样本地调用SAO的命令行
 
 `./bin/cli.js`
 

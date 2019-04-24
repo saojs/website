@@ -2,21 +2,21 @@
 sidebar: auto
 ---
 
-# 骚.js配置文件
+# SAO配置文件
 
 ::: 小告示
-确认你已经阅读过了 [新手入门](./guide/creating-generators.md)!
+请确认你已经阅读过了 [新手入门](./guide/creating-generators.md)!
 :::
 
-骚.js配置文件，即 `saofile.js` 放置在根目录下, 它用来控制生成器如何生成新的文件目录。
+SAO配置文件，即放置在根目录下的`saofile.js` ,它用来控制生成器如何生成新的文件目录。
 
 ## Prompts
 
 __Type__: `Prompt[]` | `(this: Generator) => Prompt[] | Promise<Prompt[]>`
 
-`prompts` 一个配置弹窗如何问询的数组。
+`prompts` 一个配置弹窗问询流程的数组。
 `
-所有在 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js#question) 中可配置的弹窗问询都在这里可以配置！ 
+所有在 [Inquirer.js](https://github.com/SBoudrias/Inquirer.js#question) 中可配置的弹窗问询选项，在这里都是可用的！ 
 
 当然，相较于`Inquirer.js`，我们有一些小改动：
 
@@ -48,7 +48,7 @@ prompts: [
 - __Type__: `boolean`
 - __Default__: `false`
 
-这是只有骚.js具有的属性, 它用来告诉生成器是否需要存储下来，以备下次使用.
+这是只有SAO具有的属性, 它用来告诉生成器是否需要存储下来，以备下次使用.
  
 注意，v1和v0中存储在不同的位置。
 
@@ -182,14 +182,14 @@ module.exports = {
 
 ## subGenerators
 
-你可以使用 `subGenerators` 来注册一系列的附属生成器:
+你可以使用 `subGenerators` 来注册一系列的子生成器:
 
 ```js
 module.exports = {
   subGenerators: [
     {
       name: 'foo',
-      // 附属生成器的目录地址(相对于主生成器的saofile.js),
+      // 子生成器的目录地址(相对于主生成器的saofile.js),
       generator: './generators/foo'
     },
     {
@@ -202,7 +202,7 @@ module.exports = {
 }
 ```
 
-接下来，你可以这样调用附属生成器
+接下来，你可以这样调用子生成器
 
 ```bash
 sao sample:foo

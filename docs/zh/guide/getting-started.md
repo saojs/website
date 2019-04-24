@@ -2,7 +2,7 @@
 
 ## 安装
 
-骚.js是一个javascript命令行工具，你可以通过npm安装：
+SAO是一个javascript命令行工具，你可以通过npm安装：
 
 ```bash
 npm i -g sao
@@ -14,7 +14,7 @@ npm i -g sao
 yarn global add sao
 ```
 
-全局安装骚.js之后，在终端输入`sao`命令，将会打印出使用说明。
+全局安装SAO之后，在终端输入`sao`命令，将会打印出使用说明。
 
 ## 使用**生成器**
 
@@ -22,7 +22,7 @@ yarn global add sao
 sao nm my-project
 ```
 
-使用这个命令，骚.js将安装一个**生成器**(在示例中使用的是[sao-nm](https://npm.im/sao-nm)包)，并根据**生成器**将文件目录生成在`my-project`文件夹下。
+使用这个命令，SAO将安装一个**生成器**(在示例中使用的是[sao-nm](https://npm.im/sao-nm)包)，并根据**生成器**将文件目录生成在`my-project`文件夹下。
 
 如果你需要在当前文件夹下生成文件目录，只需要输入`sao nm`
 
@@ -30,7 +30,7 @@ sao nm my-project
 
 - __本地文件夹__, e.g. `sao ./path/to/my-generator`
 - __NPM包__, e.g. `sao react` 将下载npm包 `sao-react`.
-  - 如果npm包不符合 `sao-*` 的命名格式, 只需要添加前缀即可 `sao npm:foo`, 骚.js将直接调用 `foo` 包来替代 `sao-foo`.
+  - 如果npm包不符合 `sao-*` 的命名格式, 只需要添加前缀即可 `sao npm:foo`, SAO将直接调用 `foo` 包来替代 `sao-foo`.
 - __Git仓库__, e.g. `sao egoist/sao-nm` 将使用GitHub项目 `github.com/egoist/sao-nm`, 你可以添加前缀来调用其它的Git服务商:
   - `gitlab:` 采用GitLab服务.
   - `bitbucket:` 采用BitBucket服务.
@@ -53,18 +53,18 @@ sao nm#dev
 sao nm#v1.0.0
 ```
 
-### **附属生成器**
+### **子生成器**
 
-一个生成器下可能还有附属生成器，例如：
+一个生成器下可能还有子生成器，例如：
 
 ```bash
 sao nm:donate
 ```
 
-在 `:` 号后面的即时一个名叫`donate`的**附属生成器**, 当你运行这行代码时，骚.js将调用一个附属生成器，作用是运行 `postinstall` 脚本，并在 `package.json` 中显示捐助网址.
+在 `:` 号后面的即时一个名叫`donate`的**子生成器**, 当你运行这行代码时，SAO将调用一个子生成器，作用是运行 `postinstall` 脚本，并在 `package.json` 中显示捐助网址.
 
 ::: 警告
-附属生成器必须在已创建的项目中运行，也就是说，它的输出目录永远都是当前的工作目录。
+子生成器必须在已创建的项目中运行，也就是说，它的输出目录永远都是当前的工作目录。
 :::
 
 ### 升级**生成器**缓存

@@ -7,7 +7,7 @@ module.exports = {
     },
     '/zh/': {
       lang: '简体中文',
-      title: '骚.js',
+      title: 'SAO',
       description: '人人都能轻松上手的脚手架工具'
     }
   },

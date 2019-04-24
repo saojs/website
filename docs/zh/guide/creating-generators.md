@@ -1,6 +1,6 @@
 # 创建生成器
 
-骚.js提供了一个专门用来创建新生成器的生成器：
+SAO提供了一个专门用来创建新生成器的生成器：
 
 ```bash
 sao generator sao-sample
@@ -9,7 +9,7 @@ sao generator sao-sample
 
 ## 目录结构
 
-基础的骚.js项目:
+基础的SAO项目:
 
 ```bash
 .
@@ -99,7 +99,7 @@ module.exports = {
 sao ../sao-sample new-project
 ```
 
-假如在新的**生成器**中找不到 `saofile.js` ，骚.js将使用 [默认文件](https://github.com/saojs/sao/blob/master/lib/saofile.fallback.js) ，直接将所有文件原封不动导出到输出目录。
+假如在新的**生成器**中找不到 `saofile.js` ，SAO将使用 [默认文件](https://github.com/saojs/sao/blob/master/lib/saofile.fallback.js) ，直接将所有文件原封不动导出到输出目录。
 
 ## 生成器实例
 
@@ -121,4 +121,4 @@ module.exports = {
 }
 ```
 
-想知道`saofile.js`中完整的选项？ 请访问 [骚.js配置文件](../saofile.md).
+想知道`saofile.js`中完整的选项？ 请访问 [SAO配置文件](../saofile.md).
