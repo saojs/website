@@ -60,7 +60,7 @@ The npm client.
 
 - Type: `() => void`
 
-Run `git init` synchonously in output directory.
+Run `git init` synchronously in output directory.
 
 ### npmInstall
 
@@ -72,7 +72,7 @@ Use `npm` or `yarn` to install packages in output directory.
 function npmInstall(opts?: InstallOpts): Promise<void>
 
 interface InstallOpts {
-  /* The packages to install, if omited, it will install packages in `package.json` */
+  /* The packages to install, if omitted, it will install packages in `package.json` */
   packages?: string[]
   /* Install packages as devDependencies, false by default */
   saveDev?: boolean
