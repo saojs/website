@@ -104,7 +104,7 @@ actions: [
 ```
 
 - __files__: One or more glob patterns.
-- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will recieve raw string.
+- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will receive raw string.
 
 ### `type: 'move'`
 
