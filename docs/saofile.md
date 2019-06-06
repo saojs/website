@@ -123,6 +123,22 @@ actions: [
 
 - __patterns__: Each entry can be a glob pattern which is supposed to matches __zero or one__ file in target directory.
 
+If you need a dynamic file path based on user answers, you can achieve it by passing a function to actions
+
+```js
+actions() {
+  const { name } = this.answers
+  return [
+    {
+      type: 'move',
+      patterns: {
+        'module.ts': `${ name }.module.ts`
+      }
+    }
+  ]
+}
+```
+
 ### `type: 'remove'`
 
 Remove files in target directory.
