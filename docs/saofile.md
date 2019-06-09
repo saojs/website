@@ -126,13 +126,12 @@ actions: [
 If you need a dynamic file path based on user answers, you can achieve it by passing a function to actions
 
 ```js
-actions() {
-  const { name } = this.answers
+actions: function() {
   return [
     {
       type: 'move',
       patterns: {
-        'module.ts': `${ name }.module.ts`
+        'module.ts': `${this.answers.name}.module.ts`
       }
     }
   ]
