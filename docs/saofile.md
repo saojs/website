@@ -5,7 +5,7 @@ sidebar: auto
 # SAO File
 
 ::: tip
-Make sure you have read the guide for [creating generators](./guide/creating-your-first-generator.md) first!
+Make sure you have read the guide for [creating generators](./guide/creating-generators.md) first!
 :::
 
 SAO file, i.e. `saofile.js` lies in the root directory of a generator, it's used to create a generator instance which defines how to generate a new project.
@@ -104,7 +104,7 @@ actions: [
 ```
 
 - __files__: One or more glob patterns.
-- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will recieve raw string.
+- __handler__: The function we use to get new file contents. For `.json` we automatically parse and stringify it. Otherwise you will receive raw string.
 
 ### `type: 'move'`
 
