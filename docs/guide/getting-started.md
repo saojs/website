@@ -32,8 +32,9 @@ A generator could be one of:
 - __An npm package__, e.g. `sao react` will be package `sao-react`.
   - To use an npm package that does not follow the `sao-*` naming convention, just prefix the name like this: `sao npm:foo`, then this will use the `foo` package instead of `sao-foo`.
 - __A git repository__, e.g. `sao egoist/sao-nm` will use `github.com/egoist/sao-nm`, you can use following prefixes for other git providers:
-  - `gitlab:` For GitLab.
-  - `bitbucket:` For BitBucket.
+  - `gitlab:` For GitLab. e.g. `sao gitlab:user/my-generator`
+  - `bitbucket:` For BitBucket. e.g. `sao bitbucket:user/my-generator`
+  - `direct:` For a git repository anywhere else `sao direct:git@yourowngitrepo.com:user/my-generator.git`
 
 ### Versioning
 
