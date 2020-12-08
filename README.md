@@ -1,3 +1,3 @@
 # SAO Official Website
 
-https://saojs.org
+https://sao.vercel.app
