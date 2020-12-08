@@ -2,7 +2,6 @@
   <div class="version-selector">
     <select @change="handleSelect">
       <option value="v1" selected>v1</option>
-      <option value="v0">v0</option>
     </select>
   </div>
 </template>
