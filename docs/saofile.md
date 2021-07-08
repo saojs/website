@@ -59,7 +59,6 @@ __Type__: `Action[]` | `(this: Generator) => Action[] | Promise<Action[]>`
 `actions` is used to manipulate files. There're 4 kinds of actions which share following options:
 
 - __type__: Action type
-- __when__: Similar to `prompts`'s [`when`](#when).
 
 ### `type: 'add'`
 
