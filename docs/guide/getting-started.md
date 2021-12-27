@@ -24,7 +24,7 @@ sao nm my-project
 
 By running this command, SAO will install a generator which in this case is [sao-nm](https://npm.im/sao-nm) from npm, and use it to generate files into `my-project` directory.
 
-If you want it to generate into current directoy, just omit the second argument like this: `sao nm`.
+If you want it to generate into current directory, just omit the second argument like this: `sao nm`.
 
 A generator could be one of:
 

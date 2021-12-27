@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         name: 'description',
-        message: 'How would you descripe the new project',
+        message: 'How would you describe the new project',
         default: `my ${superb()} project`
       },
       {
@@ -89,7 +89,7 @@ module.exports = {
 }
 ```
 
-- `prompts`: CLI prompts to retrive answers from current user.
+- `prompts`: CLI prompts to retrieve answers from current user.
 - `actions`: A series of actions to manipulate files.
 - `completed`: A function that will be invoked when the whole process is finished.
 
