@@ -225,7 +225,7 @@ sao sample:bar
 
 ### `prepare`
 
-__Type__: (this: Generator) => Prompt<void> | void`
+__Type__: `(this: Generator) => Prompt<void> | void`
 
 Executed before prompts and actions, you can throw an error here to exit the process:
 
@@ -245,7 +245,7 @@ module.exports = {
 
 ### `completed`
 
-__Type__: (this: Generator) => Prompt<void> | void`
+__Type__: `(this: Generator) => Prompt<void> | void`
 
 Executed when all actions are completed.
 
